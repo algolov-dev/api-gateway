@@ -37,7 +37,7 @@ public class Routes {
 
     @Bean
     public RouterFunction<ServerResponse> orderServiceSwaggerRoute() {
-        return GatewayRouterFunctions.route("product_service_swagger")
+        return GatewayRouterFunctions.route("orderService_swagger")
                 .route(RequestPredicates.path("/aggregate/orderService/v3/api-docs"), HandlerFunctions.http("http://localhost:8081"))
                 .filter(setPath("/api-docs"))
                 .build();
@@ -52,7 +52,7 @@ public class Routes {
 
     @Bean
     public RouterFunction<ServerResponse> inventoryServiceSwaggerRoute() {
-        return GatewayRouterFunctions.route("product_service_swagger")
+        return GatewayRouterFunctions.route("inventory_service_swagger")
                 .route(RequestPredicates.path("/aggregate/inventoryService/v3/api-docs"), HandlerFunctions.http("http://localhost:8082"))
                 .filter(setPath("/api-docs"))
                 .build();
